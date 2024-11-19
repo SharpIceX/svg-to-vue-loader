@@ -1,0 +1,14 @@
+# 日志
+*.log
+
+# MacOS 文件
+.DS_Store
+
+# 构建输出
+/dist
+
+# Node模块
+node_modules
+
+# TypeScript Temp
+/rollup.config-*.mjs

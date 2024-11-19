@@ -1,0 +1,11 @@
+# Node 模块
+/node_modules
+
+# 构建输出
+/dist
+
+# pnpm
+/pnpm-lock.yaml
+
+# TypeScript Temp
+/rollup.config-*.mjs

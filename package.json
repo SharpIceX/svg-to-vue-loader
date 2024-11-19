@@ -1,0 +1,97 @@
+{
+	"name": "svg-to-vue-loader",
+	"type": "module",
+	"version": "1.0.0",
+	"license": "MPL-2.0",
+	"main": "./dist/main.cjs",
+	"module": "./dist/main.mjs",
+	"types": "./dist/main.d.ts",
+	"repository": "github:FurryRbl/svg-to-vue-loader",
+	"homepage": "https://github.com/FurryRbl/svg-to-vue-loader",
+	"description": "Webpack Loader to convert svg files to Vue components",
+	"bugs": {
+		"email": "SharpIce@SharpIce.top",
+		"url": "https://github.com/FurryRbl/svg-to-vue-loader/issues"
+	},
+	"author": {
+		"name": "SharpIce",
+		"email": "SharpIce@SharpIce.top",
+		"url": "https://SharpIce.top"
+	},
+	"funding": [
+		{
+			"type": "ko-fi",
+			"url": "https://ko-fi.com/SharpIce"
+		},
+		{
+			"type": "ifdian",
+			"url": "https://ifdian.net/@SharpIce"
+		}
+	],
+	"devEngines": {
+		"runtime": {
+			"name": "node",
+			"onFail": "error"
+		},
+		"packageManager": {
+			"name": "pnpm",
+			"onFail": "error"
+		}
+	},
+	"keywords": [
+		"vue",
+		"svg",
+		"webpack",
+		"webpack-loader"
+	],
+	"exports": {
+		".": {
+			"types": "./dist/main.d.ts",
+			"import": "./dist/main.mjs",
+			"require": "./dist/main.cjs"
+		},
+		"./options": {
+			"types": "./dist/types/options.d.ts"
+		}
+	},
+	"files": [
+		"dist",
+		"LICENSE",
+		"README.md"
+	],
+	"scripts": {
+		"clean": "rimraf dist",
+		"lint": "eslint --fix .",
+		"test": "node ./test.js",
+		"format": "prettier . --write",
+		"build": "rollup -c rollup.config.ts --configPlugin typescript"
+	},
+	"dependencies": {
+		"@vue/compiler-sfc": "^3.5.13",
+		"acorn": "^8.14.0",
+		"cheerio": "^1.0.0",
+		"escodegen": "^2.1.0",
+		"pkg-from-path": "^1.1.1",
+		"svgo": "^3.3.2",
+		"vue": "^3.5.13"
+	},
+	"devDependencies": {
+		"@eslint/js": "^9.15.0",
+		"@fortawesome/fontawesome-free": "^6.7.1",
+		"@material-design-icons/svg": "^0.14.13",
+		"@rollup/plugin-node-resolve": "^15.3.0",
+		"@rollup/plugin-typescript": "^12.1.1",
+		"@types/escodegen": "^0.0.10",
+		"@types/node": "^22.9.1",
+		"eslint": "^9.15.0",
+		"eslint-config-prettier": "^9.1.0",
+		"eslint-plugin-n": "^17.13.2",
+		"eslint-plugin-prettier": "^5.2.1",
+		"prettier": "^3.3.3",
+		"rimraf": "^6.0.1",
+		"rollup": "^4.27.3",
+		"typescript": "^5.6.3",
+		"typescript-eslint": "^8.15.0",
+		"webpack": "^5.96.1"
+	}
+}
