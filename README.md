@@ -13,8 +13,8 @@
 
 ```bash
 npm add --save-dev svg-to-vue-loader vue-loader @vue/compiler-sfc # Npm
-yarn add -D svg-to-vue-loader vue-loader # Yarn
-pnpm add -D svg-to-vue-loader vue-loader # Pnpm
+yarn add -D svg-to-vue-loader vue-loader @vue/compiler-sfc # Yarn
+pnpm add -D svg-to-vue-loader vue-loader @vue/compiler-sfc # Pnpm
 ```
 
 ### Config
