@@ -2,6 +2,7 @@ import type vue from 'vue';
 import type webpack from 'webpack';
 import processSvg from './processSvg';
 import type LoaderOptions from './options';
+import replace from '@rollup/plugin-replace';
 import generateComponent from './generateComponent';
 
 export const componentType: vue.DefineComponent<

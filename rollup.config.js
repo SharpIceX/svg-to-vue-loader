@@ -1,5 +1,6 @@
 import path from 'node:path';
 import { defineConfig } from 'rollup';
+import replace from '@rollup/plugin-replace';
 import typescript from '@rollup/plugin-typescript';
 import nodeResolve from '@rollup/plugin-node-resolve';
 
@@ -21,14 +22,19 @@ export default defineConfig([
 		output: {
 			format: 'cjs',
 			sourcemap: false,
-			exports: 'named',
 			file: 'dist/main.cjs',
 		},
 		plugins: [
+			nodeResolve(),
 			typescript({
 				declaration: false,
 			}),
-			nodeResolve(),
+			replace({
+				preventAssignment: true,
+				include: path.resolve('./src/main.ts'),
+
+				'export const': 'const',
+			}),
 		],
 	},
 ]);
