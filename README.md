@@ -22,7 +22,7 @@ pnpm add -D svg-to-vue-loader vue-loader # Pnpm
 ```typescript
 // webpack.config.ts
 import type webpack from 'webpack';
-import vueLoaderPlugin from 'vue-loader/lib/plugin';
+import { VueLoaderPlugin } from 'vue-loader';
 import type svgToVueLoaderOptions from 'svg-to-vue-loader/options';
 
 export default {
@@ -51,7 +51,7 @@ export default {
       },
     ],
   },
-  plugins: [new vueLoaderPlugin()],
+  plugins: [new VueLoaderPlugin()],
   // ..
 } satisfies webpack.Configuration;
 ```
@@ -60,7 +60,7 @@ or
 
 ```javascript
 // webpack.config.ts
-import vueLoaderPlugin from 'vue-loader/lib/plugin';
+import { VueLoaderPlugin } from 'vue-loader';
 
 /**
  * @type {import('webpack').Configuration}
