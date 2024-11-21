@@ -1,17 +1,17 @@
-import type vue from 'vue';
 import type webpack from 'webpack';
 import processSvg from './processSvg';
+import type { DefineComponent } from 'vue';
 import type LoaderOptions from './options';
 import replace from '@rollup/plugin-replace';
 import generateComponent from './generateComponent';
 
-export const componentType: vue.DefineComponent<
+export const componentType: DefineComponent<
 	{
 		size?: number;
 	},
 	null,
 	never
-> = {} as vue.DefineComponent<
+> = {} as DefineComponent<
 	{
 		size?: number;
 	},
@@ -19,7 +19,7 @@ export const componentType: vue.DefineComponent<
 	never
 >;
 
-export const noSizeComponentType: vue.DefineComponent<null, null, never> = {} as vue.DefineComponent<null, null, never>;
+export const noSizeComponentType: DefineComponent<null, null, never> = {} as DefineComponent<null, null, never>;
 
 /**
  * Webpack Loader to convert svg files to Vue components

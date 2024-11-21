@@ -97,3 +97,14 @@ export default {
   // ..
 };
 ```
+
+## Types
+
+```typescript
+// type.d.ts
+
+declare module '*.svg' {
+  import type { componentType } from 'svg-to-vue-loader';
+  export default componentType;
+}
+```
