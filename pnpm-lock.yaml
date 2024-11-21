@@ -8,9 +8,6 @@ importers:
 
   .:
     dependencies:
-      '@vue/compiler-sfc':
-        specifier: ^3.5.13
-        version: 3.5.13
       acorn:
         specifier: ^8.14.0
         version: 8.14.0
