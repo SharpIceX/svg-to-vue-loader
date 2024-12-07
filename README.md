@@ -104,7 +104,18 @@ export default {
 // type.d.ts
 
 declare module '*.svg' {
-  import type { componentType } from 'svg-to-vue-loader';
+  import { componentType } from 'svg-to-vue-loader';
   export default componentType;
+}
+```
+
+or
+
+```typescript
+// type.d.ts
+
+declare module '*.svg' {
+  import { noSizeComponentType } from 'svg-to-vue-loader';
+  export default noSizeComponentType;
 }
 ```
