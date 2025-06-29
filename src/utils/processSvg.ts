@@ -1,6 +1,6 @@
 import { load as cheerio } from 'cheerio';
-import type LoaderOptions from './options';
 import { optimize as svgoOptimize } from 'svgo';
+import type LoaderOptions from '../types/loaderOptions';
 
 export default (svg: string, resourcePath: string, options: LoaderOptions): string => {
 	const $ = cheerio(svg, {
@@ -29,7 +29,7 @@ export default (svg: string, resourcePath: string, options: LoaderOptions): stri
 
 	svg = $.xml();
 
-	// Optimize svg
+	// 调用 svgo
 	if (options.enableSvgo) {
 		svg = svgoOptimize(svg, {
 			...options.svgoConfig,

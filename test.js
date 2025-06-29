@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import url from 'node:url';
-import loader from 'svg-to-vue-loader';
+import loader from './dist/index.mjs';
 
 const createTest = (path, options) => {
 	const content = fs.readFileSync(path, 'utf-8');
@@ -17,29 +17,10 @@ const createTest = (path, options) => {
 	console.log(`\n${'='.repeat(80)}`);
 
 	const resourcePath = url.fileURLToPath(import.meta.resolve('@material-design-icons/svg/round/rss_feed.svg'));
-	const options = {
-		componentName: 'packageIconNameList',
-	};
 
-	console.log(`Input: ${resourcePath}\nOptions: ${JSON.stringify(options, null, 4)}`);
+	console.log(`Input: ${resourcePath}\nOptions: None`);
 
-	const result = createTest(resourcePath, options);
-	console.log(`Output: \n${result}`);
-
-	console.log(`\n${'='.repeat(80)}`);
-}
-
-{
-	console.log(`\n${'='.repeat(80)}`);
-
-	const resourcePath = url.fileURLToPath(import.meta.resolve('@fortawesome/fontawesome-free/svgs/brands/github.svg'));
-	const options = {
-		componentName: 'packageIconNameList',
-	};
-
-	console.log(`Input: ${resourcePath}\nOptions: ${JSON.stringify(options, null, 4)}`);
-
-	const result = createTest(resourcePath, options);
+	const result = createTest(resourcePath, {});
 	console.log(`Output: \n${result}`);
 
 	console.log(`\n${'='.repeat(80)}`);
@@ -51,7 +32,6 @@ const createTest = (path, options) => {
 	const resourcePath = url.fileURLToPath(import.meta.resolve('@fortawesome/fontawesome-free/svgs/brands/github.svg'));
 	const options = {
 		defaultSize: false,
-		componentName: false,
 	};
 
 	console.log(`Input: ${resourcePath}\nOptions: ${JSON.stringify(options, null, 4)}`);
@@ -68,7 +48,6 @@ const createTest = (path, options) => {
 	const resourcePath = url.fileURLToPath(import.meta.resolve('@fortawesome/fontawesome-free/svgs/brands/github.svg'));
 	const options = {
 		defaultSize: 20,
-		componentName: false,
 	};
 
 	console.log(`Input: ${resourcePath}\nOptions: ${JSON.stringify(options, null, 4)}`);
@@ -87,7 +66,6 @@ const createTest = (path, options) => {
 		enableSvgo: true,
 		removeAllFill: true,
 		useFillCurrentColor: true,
-		componentName: 'packageIconNameList',
 		svgoConfig: {
 			multipass: true,
 		},

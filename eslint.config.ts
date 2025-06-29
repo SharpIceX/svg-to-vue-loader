@@ -1,30 +1,34 @@
+import globals from 'globals';
 import eslint from '@eslint/js';
 import tseslint from 'typescript-eslint';
-import nodePlugin from 'eslint-plugin-n';
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
 
 export default tseslint.config(
 	eslint.configs.recommended,
 	tseslint.configs.recommended,
-	nodePlugin.configs['flat/recommended-module'],
 	eslintPluginPrettierRecommended,
 	{
 		languageOptions: {
 			parserOptions: {
+				projectService: true,
 				sourceType: 'module',
 				ecmaVersion: 'latest',
+				tsconfigRootDir: import.meta.dirname,
 			},
-		},
-		settings: {
-			node: {
-				tryExtensions: ['.js', '.ts'],
+			globals: {
+				...globals.node,
 			},
 		},
 		rules: {
-			'n/no-process-exit': 'off',
+			'prettier/prettier': 'off',
 			eqeqeq: ['error', 'always'],
-			'vue/component-definition-name-casing': ['error', 'kebab-case'],
 		},
-		ignores: ['node_modules'],
+	},
+	{
+		files: ['**/*.js'],
+		extends: [tseslint.configs.disableTypeChecked],
+	},
+	{
+		ignores: ['**/node_modules/**', '**/dist'],
 	},
 );

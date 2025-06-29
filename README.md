@@ -23,7 +23,7 @@ pnpm add -D svg-to-vue-loader vue-loader @vue/compiler-sfc # Pnpm
 // webpack.config.ts
 import type webpack from 'webpack';
 import { VueLoaderPlugin } from 'vue-loader';
-import type svgToVueLoaderOptions from 'svg-to-vue-loader/options';
+import type { LoaderOptions } from 'svg-to-vue-loader';
 
 export default {
   // ...
@@ -43,7 +43,7 @@ export default {
                 loader: 'svg-to-vue-loader',
                 options: {
                   // Your options here
-                } satisfies svgToVueLoaderOptions,
+                } satisfies LoaderOptions,
               },
             ],
           },
@@ -82,7 +82,7 @@ export default {
               'vue-loader',
               {
                 loader: 'svg-to-vue-loader',
-                /** @type {import('svg-to-vue-loader/options')} */
+                /** @type {import('svg-to-vue-loader').LoaderOptions} */
                 options: {
                   // Your options here
                 },
@@ -101,7 +101,7 @@ export default {
 ## Types
 
 ```typescript
-// type.d.ts
+// types/type.d.ts
 
 declare module '*.svg' {
   import { componentType } from 'svg-to-vue-loader';
@@ -112,7 +112,7 @@ declare module '*.svg' {
 or
 
 ```typescript
-// type.d.ts
+// types/type.d.ts
 
 declare module '*.svg' {
   import { noSizeComponentType } from 'svg-to-vue-loader';

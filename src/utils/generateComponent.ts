@@ -1,22 +1,16 @@
 import * as acorn from 'acorn';
 import escodegen from 'escodegen';
-import type LoaderOptions from './options';
-import getComponentName from './getComponentName';
+import type LoaderOptions from '../types/loaderOptions';
 
-const generateScript = (svg: string, resourcePath: string, options: LoaderOptions): string => {
+const generateScript = (options: LoaderOptions): string => {
 	const defaultExport: Record<string, unknown> = {};
-
-	// 处理组件名
-	if (options.componentName !== false) {
-		defaultExport.name = getComponentName(resourcePath, options.componentName || 'packageIconNameList');
-	}
 
 	// 处理默认大小
 	if (options.defaultSize !== false) {
 		defaultExport.props = {
 			size: {
 				type: Number,
-				default: options.defaultSize || 24,
+				default: options.defaultSize ?? 24,
 			},
 		};
 	}
@@ -37,8 +31,8 @@ const generateScript = (svg: string, resourcePath: string, options: LoaderOption
 	}
 };
 
-export default (svg: string, resourcePath: string, options: LoaderOptions): string => {
+export default (svg: string, options: LoaderOptions): string => {
 	const template = `<template>${svg}</template>`;
-	const script = generateScript(svg, resourcePath, options);
+	const script = generateScript(options);
 	return template + script;
 };
