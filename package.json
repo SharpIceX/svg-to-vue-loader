@@ -6,12 +6,12 @@
 	"main": "./dist/index.cjs",
 	"module": "./dist/index.mjs",
 	"types": "./dist/index.d.ts",
-	"repository": "github:FurryRbl/svg-to-vue-loader",
-	"homepage": "https://github.com/FurryRbl/svg-to-vue-loader",
+	"repository": "github:SharpIceX/svg-to-vue-loader",
+	"homepage": "https://github.com/SharpIceX/svg-to-vue-loader",
 	"description": "Webpack Loader to convert svg files to Vue components",
 	"bugs": {
 		"email": "SharpIce@SharpIce.top",
-		"url": "https://github.com/FurryRbl/svg-to-vue-loader/issues"
+		"url": "https://github.com/SharpIceX/svg-to-vue-loader/issues"
 	},
 	"author": {
 		"name": "SharpIce",
