@@ -24,6 +24,10 @@ export default tseslint.config(
 		},
 	},
 	{
+		files: ['**/*.js'],
+		extends: [tseslint.configs.disableTypeChecked],
+	},
+	{
 		ignores: ['**/node_modules/**', '**/dist/**'],
 	},
 );
