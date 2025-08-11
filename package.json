@@ -61,30 +61,30 @@
 	},
 	"dependencies": {
 		"acorn": "^8.15.0",
-		"cheerio": "^1.1.0",
+		"cheerio": "^1.1.2",
 		"escodegen": "^2.1.0",
 		"svgo": "^4.0.0",
-		"vue": "^3.5.17"
+		"vue": "^3.5.18"
 	},
 	"devDependencies": {
-		"@eslint/js": "^9.30.0",
-		"@fortawesome/fontawesome-free": "^6.7.2",
+		"@eslint/js": "^9.33.0",
+		"@fortawesome/fontawesome-free": "^7.0.0",
 		"@material-design-icons/svg": "^0.14.15",
 		"@types/escodegen": "^0.0.10",
-		"@types/node": "^24.0.7",
-		"esbuild": "^0.25.5",
-		"eslint": "^9.30.0",
-		"eslint-config-prettier": "^10.1.5",
-		"eslint-plugin-prettier": "^5.5.1",
-		"globals": "^16.2.0",
-		"jiti": "^2.4.2",
+		"@types/node": "^24.2.1",
+		"esbuild": "^0.25.8",
+		"eslint": "^9.33.0",
+		"eslint-config-prettier": "^10.1.8",
+		"eslint-plugin-prettier": "^5.5.4",
+		"globals": "^16.3.0",
+		"jiti": "^2.5.1",
 		"prettier": "^3.6.2",
 		"rimraf": "^6.0.1",
-		"rollup": "^4.44.1",
+		"rollup": "^4.46.2",
 		"rollup-plugin-dts": "^6.2.1",
 		"rollup-plugin-esbuild": "^6.2.1",
-		"typescript": "^5.8.3",
-		"typescript-eslint": "^8.35.0",
-		"webpack": "^5.99.9"
+		"typescript": "^5.9.2",
+		"typescript-eslint": "^8.39.1",
+		"webpack": "^5.101.0"
 	}
 }
