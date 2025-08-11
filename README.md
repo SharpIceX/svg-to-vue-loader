@@ -1,11 +1,4 @@
-<!-- markdownlint-disable MD033 MD041 -->
-
-<div align="center">
-
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/S6S8L8OOP)
-[![爱发电](https://img.shields.io/badge/%E7%88%B1%E5%8F%91%E7%94%B5_Afdian-946CE6?style=for-the-badge)](https://ifdian.net/a/SharpIce)
-
-</div>
+<!-- markdownlint-disable MD041 -->
 
 ## Usage
 
@@ -104,8 +97,9 @@ export default {
 // types/type.d.ts
 
 declare module '*.svg' {
-  import { componentType } from 'svg-to-vue-loader';
-  export default componentType;
+  import type { ComponentType } from 'svg-to-vue-loader';
+  const component: ComponentType;
+  export default component;
 }
 ```
 
@@ -115,7 +109,8 @@ or
 // types/type.d.ts
 
 declare module '*.svg' {
-  import { noSizeComponentType } from 'svg-to-vue-loader';
-  export default noSizeComponentType;
+  import type { noSizeComponentType } from 'svg-to-vue-loader';
+  const component: ComponentType;
+  export default component;
 }
 ```
